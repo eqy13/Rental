@@ -1,0 +1,364 @@
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+
+    font-family: 'Segoe UI', sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #f4f7f5,
+        #eef2ff
+    );
+
+    min-height: 100vh;
+
+    padding: 24px;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.likes-page{
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.likes-header{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+}
+
+.back-btn{
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 16px;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    color: #111827;
+
+    box-shadow:
+    0 6px 20px rgba(0,0,0,0.06);
+}
+
+.likes-header h1{
+
+    font-size: 28px;
+
+    margin-bottom: 4px;
+}
+
+.likes-header p{
+
+    color: #6b7280;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.likes-grid{
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+
+    gap: 22px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.popular-card{
+
+    background:
+    rgba(255,255,255,0.65);
+
+    backdrop-filter: blur(18px);
+
+    border:
+    1px solid rgba(255,255,255,0.5);
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    transition: 0.25s;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.06);
+}
+
+.popular-card:hover{
+
+    transform:
+    translateY(-4px);
+}
+
+.popular-card img{
+
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.popular-card h3{
+
+    font-size: 18px;
+
+    padding: 16px 18px 6px;
+}
+
+.product-tag{
+
+    margin: 0 18px;
+
+    display: inline-flex;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    background:
+    rgba(22,101,52,0.10);
+
+    color: #166534;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.price{
+
+    padding: 16px 18px;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    color: #166534;
+}
+
+/* =========================
+   ACTION
+========================= */
+
+.card-actions{
+
+    display: flex;
+
+    gap: 12px;
+
+    padding: 0 18px 18px;
+}
+
+.detail-btn,
+.remove-btn{
+
+    flex: 1;
+
+    border: none;
+
+    height: 46px;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+.detail-btn{
+
+    background: #166534;
+
+    color: white;
+}
+
+.remove-btn{
+
+    background: #fee2e2;
+
+    color: #dc2626;
+}
+
+.detail-btn:hover,
+.remove-btn:hover{
+
+    transform:
+    translateY(-2px);
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty-state{
+
+    width: 100%;
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+    color: #6b7280;
+}
+
+.empty-state i{
+
+    font-size: 52px;
+
+    margin-bottom: 18px;
+
+    color: #d1d5db;
+}
+
+/* =========================
+   LIKES GRID
+========================= */
+
+.likes-grid{
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap: 22px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.like-card{
+
+    position: relative;
+
+    background: white;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.06);
+}
+
+.like-card:hover{
+
+    transform: translateY(-4px);
+}
+
+.like-card img{
+
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.like-content{
+
+    padding: 18px;
+}
+
+.like-content h3{
+
+    margin-bottom: 8px;
+}
+
+.like-content .tag{
+
+    color: #6b7280;
+
+    margin-bottom: 14px;
+}
+
+.remove-like{
+
+    position: absolute;
+
+    top: 16px;
+    right: 16px;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #dc2626;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    box-shadow:
+    0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty-likes{
+
+    text-align: center;
+
+    padding: 80px 20px;
+}
+
+.empty-likes i{
+
+    font-size: 60px;
+
+    color: #dc2626;
+
+    margin-bottom: 20px;
+}
