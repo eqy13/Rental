@@ -1,0 +1,119 @@
+/* ========================================
+   UPLOAD AREA
+======================================== */
+
+.upload-area{
+
+    border:2px dashed #CBD5E1;
+
+    border-radius:24px;
+
+    padding:35px;
+
+    text-align:center;
+
+    background:#F8FAFC;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.upload-area:hover{
+
+    border-color:var(--primary);
+
+    background:#EEF2FF;
+
+}
+
+.upload-area.dragover{
+
+    border-color:var(--primary);
+
+    background:rgba(79,70,229,.08);
+
+}
+
+.upload-icon{
+
+    width:70px;
+
+    height:70px;
+
+    margin:auto auto 18px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(79,70,229,.12);
+
+    color:var(--primary);
+
+    font-size:28px;
+
+}
+
+.upload-title{
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.upload-text{
+
+    color:var(--text-light);
+
+    font-size:.88rem;
+
+}
+
+.upload-input{
+
+    display:none;
+
+}
+
+/* Preview */
+
+.image-preview{
+
+    margin-top:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.image-preview img{
+
+    width:140px;
+
+    height:140px;
+
+    object-fit:cover;
+
+    border-radius:22px;
+
+    border:2px solid var(--border);
+
+    transition:var(--transition);
+
+}
+
+.image-preview img:hover{
+
+    transform:scale(1.05);
+
+}
