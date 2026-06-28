@@ -1,0 +1,390 @@
+/* ========================================
+   ROOT (CLEAN WHITE GLASS 2026)
+======================================== */
+
+:root {
+    --bg: #f6f8fc;
+    --card: rgba(255, 255, 255, 0.65);
+    --glass: rgba(255, 255, 255, 0.55);
+
+    --text: #0f172a;
+    --muted: #64748b;
+
+    --primary: #4f46e5;
+    --cyan: #06b6d4;
+    --green: #22c55e;
+    --red: #ef4444;
+    --yellow: #f59e0b;
+
+    --border: rgba(15, 23, 42, 0.08);
+
+    --shadow-sm: 0 6px 18px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 18px 50px rgba(15, 23, 42, 0.08);
+
+    --blur: blur(14px);
+    --radius: 18px;
+}
+
+/* ========================================
+   GLOBAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+    background:
+        radial-gradient(circle at 10% 10%, rgba(79, 70, 229, 0.08), transparent 40%),
+        radial-gradient(circle at 90% 20%, rgba(6, 182, 212, 0.08), transparent 40%),
+        var(--bg);
+
+    color: var(--text);
+}
+
+/* ========================================
+   GLASS CARD BASE
+======================================== */
+
+.glass,
+.order-card,
+.modal-content {
+    background: var(--card);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-sm);
+
+    transition: 0.25s ease;
+}
+
+.glass:hover,
+.order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* ========================================
+   LAYOUT
+======================================== */
+
+.orders-page {
+    padding: 30px;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.orders-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.orders-header p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ========================================
+   GRID
+======================================== */
+
+.orders-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 22px;
+}
+
+/* ========================================
+   ORDER CARD
+======================================== */
+
+.order-card {
+    padding: 18px;
+}
+
+/* TOP */
+
+.order-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 14px;
+}
+
+.order-id {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.order-top h2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* STATUS */
+
+.status {
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    text-transform: capitalize;
+}
+
+.status.pending {
+    background: rgba(245, 158, 11, 0.12);
+    color: var(--yellow);
+}
+
+.status.disewa {
+    background: rgba(79, 70, 229, 0.12);
+    color: var(--primary);
+}
+
+.status.selesai {
+    background: rgba(34, 197, 94, 0.12);
+    color: var(--green);
+}
+
+/* INFO */
+
+.order-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    margin: 16px 0;
+}
+
+.info-box p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.info-box h3 {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* PAYMENT */
+
+.payment-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+}
+
+.payment-box h2 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* BUTTON */
+
+.download-btn {
+    background: var(--primary);
+    color: white;
+
+    border: none;
+    padding: 10px 14px;
+    border-radius: 12px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    transition: 0.2s ease;
+
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.2);
+}
+
+.download-btn:hover {
+    transform: scale(1.04);
+}
+
+/* ========================================
+   PREMIUM MODAL GLASS 2026
+======================================== */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(15, 23, 42, 0.35);
+    backdrop-filter: blur(12px);
+
+    padding: 20px;
+    z-index: 999;
+}
+
+.modal.show {
+    display: flex;
+}
+
+/* MODAL BOX */
+.modal-content {
+    width: 100%;
+    max-width: 600px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(15, 23, 42, 0.08);
+
+    box-shadow: 0 25px 70px rgba(15, 23, 42, 0.18);
+
+    overflow: hidden;
+
+    animation: modalPop 0.25s ease;
+}
+
+/* ANIMATION */
+@keyframes modalPop {
+    from {
+        transform: translateY(12px) scale(0.98);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* HEADER PREMIUM */
+.modal-header {
+    padding: 18px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        rgba(79, 70, 229, 0.08),
+        rgba(6, 182, 212, 0.08)
+    );
+
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.modal-header h3 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.modal-header button {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: white;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.modal-header button:hover {
+    transform: scale(1.05);
+}
+
+/* BODY */
+#detailContent {
+    padding: 20px;
+}
+
+/* GRID UPGRADE */
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+/* ITEM CARD STYLE */
+.detail-grid div {
+    padding: 12px 14px;
+
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+
+    border-radius: 14px;
+
+    transition: 0.2s ease;
+}
+
+.detail-grid div:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* LABEL */
+.detail-grid strong {
+    font-size: 11px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+/* VALUE */
+.detail-grid p {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 6px;
+    color: #0f172a;
+}
+
+/* FOOTER INFO STYLE (OPTIONAL STRIPE LOOK) */
+.modal-footer-note {
+    padding: 14px 20px;
+
+    font-size: 12px;
+    color: #64748b;
+
+    border-top: 1px solid rgba(15, 23, 42, 0.06);
+
+    background: rgba(248, 250, 252, 0.6);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
